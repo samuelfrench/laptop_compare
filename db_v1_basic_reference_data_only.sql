@@ -115,11 +115,13 @@ CREATE TABLE `laptop` (
   `ram_size_gb` decimal(10,2) NOT NULL,
   `storage_size_gb` decimal(10,2) NOT NULL,
   `is_touch_screen` bit(1) NOT NULL DEFAULT b'0',
+  `is_ips_screen` bit(1) DEFAULT NULL,
   `is_tab_convert` bit(1) NOT NULL DEFAULT b'0' COMMENT 'can be converted into a tablet',
   `battery_life_hr` decimal(10,2) NOT NULL,
   `release_date` date DEFAULT NULL,
-  `price` decimal(10,2) DEFAULT NULL,
-  `buy_link` varchar(500) DEFAULT NULL,
+  `photo_url` varchar(500) DEFAULT NULL,
+  `price` decimal(10,2) NOT NULL,
+  `buy_link` varchar(500) NOT NULL,
   `internal_notes` varchar(2000) DEFAULT NULL,
   PRIMARY KEY (`laptop_id`),
   KEY `laptop_fk1_idx` (`mfr_id`),
@@ -260,4 +262,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-02-22 15:39:59
+-- Dump completed on 2017-02-22 15:44:29
