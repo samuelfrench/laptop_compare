@@ -9,6 +9,8 @@ public class Laptop {
 		this.model = model;
 		this.brand = brand;
 	}
+	public Laptop() {
+	}
 	public long getId() {
 		return id;
 	}

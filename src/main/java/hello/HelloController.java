@@ -2,7 +2,10 @@ package hello;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import model.Laptop;
+
 import java.sql.SQLException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -12,15 +15,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HelloController {
 	
 	@Autowired
-	JdbcTemplate jdbcTemplate;
+	LaptopDAO laptopDAO;
 	
     @RequestMapping("/")
-    public String index() {
-        try {
-			return "Able to get db connection? " + jdbcTemplate.getDataSource().getConnection().isValid(100);
-		} catch (SQLException e) {
-			return "Error: " + e.getMessage();
-		}
+    public List<Laptop> getLaptops() {
+    	return laptopDAO.getAllLaptops();
+    }
+	
+    @RequestMapping("/size")
+    public String getSize() {
+    	return Integer.toString(laptopDAO.getAllLaptops().size());
     }
     
 }
