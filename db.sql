@@ -55,7 +55,7 @@ CREATE TABLE `cpu_model` (
   PRIMARY KEY (`cpu_model_id`),
   KEY `cpu_model_fk1_idx` (`cpu_brand_id`),
   CONSTRAINT `cpu_model_fk1` FOREIGN KEY (`cpu_brand_id`) REFERENCES `cpu_brand` (`cpu_brand_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -64,7 +64,7 @@ CREATE TABLE `cpu_model` (
 
 LOCK TABLES `cpu_model` WRITE;
 /*!40000 ALTER TABLE `cpu_model` DISABLE KEYS */;
-INSERT INTO `cpu_model` VALUES (1,1,'Core i7'),(2,1,'Core i5'),(3,1,'Core i3'),(4,2,'TEST FX');
+INSERT INTO `cpu_model` VALUES (1,1,'Core i7'),(2,1,'Core i5'),(3,1,'Core i3'),(4,2,'TEST FX'),(5,1,'Core M');
 /*!40000 ALTER TABLE `cpu_model` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -135,7 +135,7 @@ CREATE TABLE `laptop` (
   CONSTRAINT `laptop_fk3` FOREIGN KEY (`cpu_model_id`) REFERENCES `cpu_model` (`cpu_model_id`) ON UPDATE CASCADE,
   CONSTRAINT `laptop_fk4` FOREIGN KEY (`storage_type_id`) REFERENCES `storage_type` (`storage_type_id`) ON UPDATE CASCADE,
   CONSTRAINT `laptop_fk5` FOREIGN KEY (`display_res_id`) REFERENCES `display_res` (`display_res_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -144,7 +144,7 @@ CREATE TABLE `laptop` (
 
 LOCK TABLES `laptop` WRITE;
 /*!40000 ALTER TABLE `laptop` DISABLE KEYS */;
-INSERT INTO `laptop` VALUES (1,4,3,2,1,17,'gram 14Z970',14.00,2.10,-1.00,2.50,8.00,256.00,'','','\0',NULL,'2017-01-01',NULL,1199.99,'https://www.amazon.com/LG-gram-14Z970-Touchscreen-Laptop/dp/B01MS79LGW/ref=s9u_simh_gw_i1?_encoding=UTF8&fpl=fresh&pf_rd_m=ATVPDKIKX0DER&pf_rd_s=&pf_rd_r=2QF14JK0B7BGV0BTZQGA&pf_rd_t=36701&pf_rd_p=2a864ace-95b0-4160-8611-8c68f18bad61&pf_rd_i=desktop','fix battery life and url');
+INSERT INTO `laptop` VALUES (1,4,3,2,1,17,'gram 14Z970 i5',14.00,2.10,-1.00,2.50,8.00,256.00,'','','\0',NULL,'2017-01-01',NULL,1199.99,'https://www.amazon.com/LG-gram-14Z970-Touchscreen-Laptop/dp/B01MS79LGW/ref=s9u_simh_gw_i1?_encoding=UTF8&fpl=fresh&pf_rd_m=ATVPDKIKX0DER&pf_rd_s=&pf_rd_r=2QF14JK0B7BGV0BTZQGA&pf_rd_t=36701&pf_rd_p=2a864ace-95b0-4160-8611-8c68f18bad61&pf_rd_i=desktop','fix battery life and url'),(2,4,3,2,1,17,'gram 13Z970 i5',13.00,2.10,-1.00,2.50,8.00,256.00,'\0','','\0',NULL,'2017-01-01',NULL,999.99,'https://www.amazon.com/LG-gram-13Z970-Laptop-White/dp/B01N7RQ46Q/ref=s9u_simh_gw_i6?_encoding=UTF8&fpl=fresh&pf_rd_m=ATVPDKIKX0DER&pf_rd_s=&pf_rd_r=BRD1E3FGS71MC9D5JP8Q&pf_rd_t=36701&pf_rd_p=1ccffb31-5ce0-4735-922f-7d3de52f6b31&pf_rd_i=desktop','fix battery life and url'),(3,4,3,2,1,17,'gram 15Z960 i5',15.60,2.16,-1.00,2.80,8.00,256.00,'\0','','\0',NULL,'2017-01-01',NULL,999.99,'https://www.amazon.com/LG-gram-15Z960-Laptop-Gold/dp/B019O7V4EU/ref=pd_day0_147_3?_encoding=UTF8&pd_rd_i=B019O7V4EU&pd_rd_r=T6NXKMQV4HQNM1V086C9&pd_rd_w=BiauP&pd_rd_wg=BbTjs&refRID=T6NXKMQV4HQNM1V086C9&th=1','fix battery life and url'),(4,5,3,5,1,17,'UX360CA-AH51T',13.30,2.90,-1.00,0.90,8.00,512.00,'','','','\0',NULL,'https://images-na.ssl-images-amazon.com/images/I/61dI-uY03uL._SL1200_.jpg',749.99,'https://www.amazon.com/dp/B01GHQOD8U?th=1',NULL);
 /*!40000 ALTER TABLE `laptop` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -159,7 +159,7 @@ CREATE TABLE `mfr` (
   `mfr_id` int(11) NOT NULL AUTO_INCREMENT,
   `mfr_name` varchar(255) NOT NULL,
   PRIMARY KEY (`mfr_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -168,7 +168,7 @@ CREATE TABLE `mfr` (
 
 LOCK TABLES `mfr` WRITE;
 /*!40000 ALTER TABLE `mfr` DISABLE KEYS */;
-INSERT INTO `mfr` VALUES (1,'Apple'),(2,'Dell'),(3,'Lenovo'),(4,'LG');
+INSERT INTO `mfr` VALUES (1,'Apple'),(2,'Dell'),(3,'Lenovo'),(4,'LG'),(5,'ASUS');
 /*!40000 ALTER TABLE `mfr` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -264,4 +264,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-02-22 16:07:09
+-- Dump completed on 2017-02-23  7:05:13
