@@ -11,5 +11,4 @@ public class IndexController {
 		System.out.println("trying to seve index.html");
 		return "index.html";
 	}
-
 }
