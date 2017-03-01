@@ -12,7 +12,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
-public class HelloController {
+@RequestMapping("/data/laptop")
+public class LaptopDataController {
 	
 	@Autowired
 	LaptopDAO laptopDAO;
