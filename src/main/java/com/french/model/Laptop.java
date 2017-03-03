@@ -1,4 +1,4 @@
-package model;
+package com.french.model;
 
 public class Laptop {
 	private String mfr;
