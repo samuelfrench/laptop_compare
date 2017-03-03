@@ -8,7 +8,7 @@ public class Laptop {
 	private String cpuModel;
 	private String storageType;
 	private String displayRes;
-	private String laptopModel;
+	private String model;
 	private String screenSize;
 	private String weight;
 	private String batteryLifeHr;
@@ -65,11 +65,11 @@ public class Laptop {
 	public void setDisplayRes(String displayRes) {
 		this.displayRes = displayRes;
 	}
-	public String getLaptopModel() {
-		return laptopModel;
+	public String getModel() {
+		return model;
 	}
-	public void setLaptopModel(String laptopModel) {
-		this.laptopModel = laptopModel;
+	public void setModel(String model) {
+		this.model = model;
 	}
 	public String getScreenSize() {
 		return screenSize;
