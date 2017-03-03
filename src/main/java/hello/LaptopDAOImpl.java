@@ -30,6 +30,7 @@ public class LaptopDAOImpl implements LaptopDAO {
 		public Laptop mapRow(ResultSet rs, int rowNum) throws SQLException {
 			Laptop laptop = new Laptop();
 			laptop.setModel(rs.getString("model"));
+			laptop.setMfr("TODO - Expand Query");
 			return laptop;
 		}
 		
