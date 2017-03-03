@@ -4,7 +4,7 @@ public class Laptop {
 	private String mfr;
 	private String osType;
 	private String osVersion;
-	private String cpuType;
+	private String cpuBrand;
 	private String cpuModel;
 	private String storageType;
 	private String displayRes;
@@ -41,11 +41,11 @@ public class Laptop {
 	public void setOsVersion(String osVersion) {
 		this.osVersion = osVersion;
 	}
-	public String getCpuType() {
-		return cpuType;
+	public String getBrand() {
+		return cpuBrand;
 	}
-	public void setCpuType(String cpuType) {
-		this.cpuType = cpuType;
+	public void setBrand(String cpuBrand) {
+		this.cpuBrand = cpuBrand;
 	}
 	public String getCpuModel() {
 		return cpuModel;
