@@ -11,7 +11,13 @@ l.weight as weight,
 l.battery_life_hr as batteryLifeHr,
 l.base_cpu_clock_ghz as baseCpuClockGhz,
 l.is_touch_screen as isTouchScreen,
-
+l.is_ips_screen as isIpsScreen,
+l.is_tab_convert as isTabConvert,
+l.has_discrete_gpu as isDiscreteGpu,
+l.release_date as releaseDate,
+l.photo_url as photoUrl,
+l.price as price,
+l.buy_link as buyLink
 FROM laptop as l
 JOIN mfr as mfr ON l.mfr_id = mfr.mfr_id
 JOIN os_version as osv ON l.os_version_id = osv.os_version_id
