@@ -41,10 +41,10 @@ public class Laptop {
 	public void setOsVersion(String osVersion) {
 		this.osVersion = osVersion;
 	}
-	public String getBrand() {
+	public String getCpuBrand() {
 		return cpuBrand;
 	}
-	public void setBrand(String cpuBrand) {
+	public void setCpuBrand(String cpuBrand) {
 		this.cpuBrand = cpuBrand;
 	}
 	public String getCpuModel() {

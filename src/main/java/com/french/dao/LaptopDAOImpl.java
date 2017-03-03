@@ -57,8 +57,12 @@ public class LaptopDAOImpl implements LaptopDAO {
 		@Override
 		public Laptop mapRow(ResultSet rs, int rowNum) throws SQLException {
 			Laptop laptop = new Laptop();
+			laptop.setMfr(rs.getString("mfr"));
+			laptop.setOsType(rs.getString("osType"));
+			laptop.setOsVersion(rs.getString("osVersion"));
+			laptop.setCpuBrand(rs.getString("cpuBrand"));
+			
 			laptop.setModel(rs.getString("model"));
-			laptop.setMfr("TODO - Expand Query");
 			return laptop;
 		}
 		
