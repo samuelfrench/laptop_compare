@@ -61,8 +61,21 @@ public class LaptopDAOImpl implements LaptopDAO {
 			laptop.setOsType(rs.getString("osType"));
 			laptop.setOsVersion(rs.getString("osVersion"));
 			laptop.setCpuBrand(rs.getString("cpuBrand"));
-			
+			laptop.setCpuModel(rs.getString("cpuModel"));
+			laptop.setStorageType(rs.getString("storageType"));
+			laptop.setDisplayRes(rs.getString("displayRes"));
 			laptop.setModel(rs.getString("model"));
+			laptop.setBatteryLifeHr(rs.getString("batteryLifeHr"));
+			laptop.setBaseCpuClockGhz(rs.getString("baseCpuClockGhz"));
+			laptop.setIsTouchScreen(rs.getString("isTouchScreen"));
+			laptop.setIsIpsScreen(rs.getString("isIpsScreen"));
+			laptop.setIsTabConvert(rs.getString("isTabConvert"));
+			laptop.setIsDiscreteGpu(rs.getString("isDiscreteGpu"));
+			laptop.setReleaseDate(rs.getString("releaseDate"));
+			laptop.setPhotoUrl(rs.getString("photoUrl"));
+			laptop.setPrice(rs.getString("price"));
+			laptop.setBuyLink(rs.getString("buyLink"));
+			
 			return laptop;
 		}
 		
