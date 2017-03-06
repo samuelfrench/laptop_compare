@@ -265,3 +265,28 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2017-02-23  7:05:13
+
+-- attnl tables
+
+CREATE TABLE `laptop`.`header_type` (
+  `header_type_id` INT NOT NULL AUTO_INCREMENT,
+  `header_type_code` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`header_type_id`));
+ALTER TABLE `laptop`.`header_type` 
+ADD UNIQUE INDEX `header_type_unique` (`header_type_code` ASC);
+
+CREATE TABLE `laptop`.`header` (
+  `header_id` INT NOT NULL AUTO_INCREMENT,
+  `header_type_id` INT NOT NULL,
+  `header_text` VARCHAR(255) NOT NULL,
+  `header_code` VARCHAR(45) NOT NULL,
+  `default` BIT(1) NOT NULL DEFAULT false,
+  `seq` INT NOT NULL,
+  PRIMARY KEY (`header_id`),
+  UNIQUE INDEX `header_code_UNIQUE` (`header_code` ASC),
+  INDEX `header_fk1_idx` (`header_type_id` ASC),
+  CONSTRAINT `header_fk1`
+    FOREIGN KEY (`header_type_id`)
+    REFERENCES `laptop`.`header_type` (`header_type_id`)
+    ON DELETE RESTRICT
+    ON UPDATE CASCADE);
