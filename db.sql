@@ -290,3 +290,18 @@ CREATE TABLE `laptop`.`header` (
     REFERENCES `laptop`.`header_type` (`header_type_id`)
     ON DELETE RESTRICT
     ON UPDATE CASCADE);
+
+INSERT INTO `laptop`.`header_type` (`header_type_code`) VALUES ('TEXT');
+INSERT INTO `laptop`.`header_type` (`header_type_code`) VALUES ('OTHER_TEST');
+INSERT INTO `laptop`.`header_type` (`header_type_id`, `header_type_code`) VALUES ('3', 'NUMBER');
+
+INSERT INTO `laptop`.`header` (`header_type_id`, `header_text`, `header_code`, `default`, `seq`) VALUES ('2', 'Photo', 'PHOTO', 1, '1');
+INSERT INTO `laptop`.`header` (`header_type_id`, `header_text`, `header_code`, `default`, `seq`) VALUES ('1', 'Brand', 'BRAND', 1, '2');
+INSERT INTO `laptop`.`header` (`header_type_id`, `header_text`, `header_code`, `default`, `seq`) VALUES ('1', 'Model', 'MODEL', 1, '3');
+INSERT INTO `laptop`.`header` (`header_type_id`, `header_text`, `header_code`, `default`, `seq`) VALUES ('1', 'Screen Size', 'SCREEN_SIZE', 1, '4');
+INSERT INTO `laptop`.`header` (`header_type_id`, `header_text`, `header_code`, `default`, `seq`) VALUES ('1', 'OS', 'OS_VERSION', 1, '5');
+INSERT INTO `laptop`.`header` (`header_type_id`, `header_text`, `header_code`, `default`, `seq`) VALUES ('1', 'Processor Model', 'CPU_MODEL', 1, '6');
+INSERT INTO `laptop`.`header` (`header_type_id`, `header_text`, `header_code`, `default`, `seq`) VALUES ('3', 'Processor Speed', 'CPU_SPEED', 1, '7');
+INSERT INTO `laptop`.`header` (`header_type_id`, `header_text`, `header_code`, `default`, `seq`) VALUES ('3', 'Battery Life (Hour)', 'BATTERY_LIFE_HR', 1, '8');
+INSERT INTO `laptop`.`header` (`header_type_id`, `header_text`, `header_code`, `default`, `seq`) VALUES ('2', 'Price', 'BUY_PRICE', 1, '9');
+
