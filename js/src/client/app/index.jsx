@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import axios from 'axios';
+import MainLaptopTable from './MainLaptopTable.jsx';
 //import AwesomeComponent from './AwesomeComponent.jsx';
 
 class App extends React.Component {
@@ -24,6 +25,7 @@ class App extends React.Component {
     render() {
         return (
             <div>
+                <MainLaptopTable />
                 <table>
                     <tr>
                         <th> Model # </th>
