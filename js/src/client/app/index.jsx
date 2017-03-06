@@ -15,7 +15,7 @@ class App extends React.Component {
                     tableData: res.data.map(( laptopItem ) =>
                         <tr>
                             <td>{laptopItem.model}</td>
-                            <td>{laptopItem.brand}</td>
+                            <td>{laptopItem.mfr}</td>
                         </tr>
                     )
                 });
@@ -27,7 +27,7 @@ class App extends React.Component {
                 <table>
                     <tr>
                         <th> Model # </th>
-                        <th> Brand </th>
+                        <th> MFR </th>
                     </tr>
                     {this.state.tableData}
                 </table>

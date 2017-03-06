@@ -1,14 +1,13 @@
-package hello;
+package com.french.hello;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import model.Laptop;
+import com.french.dao.LaptopDAO;
+import com.french.model.Laptop;
 
-import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
