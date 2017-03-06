@@ -18,9 +18,8 @@ class TableHeaderControl extends React.Component {
         super(props);
         this.props.headersTest = ["Header A", "Header B"];
     }
-    render() { //why is this executing twice? - the second time it says this.props.headersTest is undefined - TODO
+    render() {
         var headers = [];
-        console.log(this.props.headersTest);
         this.props.headersTest.forEach(function(header){
            headers.push(<td>{header}</td>)
         });

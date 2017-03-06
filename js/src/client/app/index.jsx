@@ -9,7 +9,7 @@ class App extends React.Component {
         super( props );
         this.state = { tableData: "Loading..." };
     }
-    componentDidMount() {
+    /* componentDidMount() {
         axios.get( `/data/laptop/` )
             .then( res => {
                 this.setState( {
@@ -21,18 +21,11 @@ class App extends React.Component {
                     )
                 });
             })
-    };
+    }; */
     render() {
         return (
             <div>
                 <MainLaptopTable />
-                <table>
-                    <tr>
-                        <th> Model # </th>
-                        <th> MFR </th>
-                    </tr>
-                    {this.state.tableData}
-                </table>
             </div>
         );
     }
