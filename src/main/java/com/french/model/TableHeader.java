@@ -17,6 +17,10 @@ public class TableHeader {
 		this.sequence = sequence;
 	}
 	
+	public TableHeader() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getHeaderTypeCode() {
 		return headerTypeCode;
 	}
