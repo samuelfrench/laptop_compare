@@ -18,27 +18,21 @@ class TableHeaderControl extends React.Component {
     
     constructor(props){
         super(props);
-        this.props.headersTest = [];
+        this.state = {headers: "Loading..."}
     }
     componentDidMount() {
         axios.get( `/table/header/` )
             .then( res => {
-                const text = []
-                res.data.forEach(function(obj) {
-                    text.push(obj.headerText);
+                this.setState({
+                    headers: res.data.map((header) =>
+                        <td>{header.headerText}</td>
+                    )
                 });
-                this.props.headersTest = text;
-                console.log(this.props.headersTest);
             })
     };
     render() {
-        var headers = [];
-        this.props.headersTest.forEach(function(header){
-           headers.push(<th>{header}</th>);
-        });
-        console.log(headers);
         return (
-            <tr>{headers}</tr>
+            <tr>{this.state.headers}</tr>
         );
     }
 }
