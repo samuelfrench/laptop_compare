@@ -1,14 +1,15 @@
 import React from 'react';
+import axios from 'axios';
 
 class MainLaptopTable extends React.Component {
     render() {
         return (
-                <div>
-                    <table>
-                        <TableHeaderControl />
-						<TableRowControl />
-                    </table>
-                </div>    
+            <div>
+                <table>
+                    <TableHeaderControl />
+					<TableRowControl />
+                </table>
+            </div>    
         );
     }
 }
@@ -17,13 +18,25 @@ class TableHeaderControl extends React.Component {
     
     constructor(props){
         super(props);
-        this.props.headersTest = ["Header A", "Header B"];
+        this.props.headersTest = [];
     }
+    componentDidMount() {
+        axios.get( `/table/header/` )
+            .then( res => {
+                const text = []
+                res.data.forEach(function(obj) {
+                    text.push(obj.headerText);
+                });
+                this.props.headersTest = text;
+                console.log(this.props.headersTest);
+            })
+    };
     render() {
         var headers = [];
         this.props.headersTest.forEach(function(header){
-           headers.push(<th>{header}</th>)
+           headers.push(<th>{header}</th>);
         });
+        console.log(headers);
         return (
             <tr>{headers}</tr>
         );
@@ -34,7 +47,7 @@ class TableRowControl extends React.Component {
 	
 	constructor(props) {
 		super(props);
-		this.props.rowTest = ["r1","r1-2"];
+		this.props.rowTest = ["0","0","0","0","0","0","0","0","0"];
 	}
 	
 	render() {
