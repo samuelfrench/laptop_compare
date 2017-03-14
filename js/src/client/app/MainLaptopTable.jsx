@@ -18,7 +18,7 @@ class TableHeaderControl extends React.Component {
     
     constructor(props){
         super(props);
-        this.state = {headers: "Loading..."}
+        this.state = {headers: "Loading..."};
     }
     componentDidMount() {
         axios.get( `/table/header/` )
@@ -32,25 +32,37 @@ class TableHeaderControl extends React.Component {
     };
     render() {
         return (
-            <tr>{this.state.headers}</tr>
+            <thead>
+                <tr>{this.state.headers}</tr>
+            </thead>
         );
     }
 }
 
+//TODO: Add row info dynamically from ajax req
 class TableRowControl extends React.Component {
 	
 	constructor(props) {
 		super(props);
-		this.props.rowTest = ["0","0","0","0","0","0","0","0","0"];
+		this.state = {rows: "test"};
 	}
-	
+	componentDidMount() {
+        axios.get( `/data/laptop/` )
+            .then( res => {
+                this.setState({
+                    rows: res.data.map((row) =>
+                    <tr>
+                        <td>{row.photoUrl}</td>
+                        <td>{row.mfr}</td>
+                        <td>{row.model}</td>
+                    </tr>
+                    )
+                });
+            })
+    };
 	render() {
-		var rowElements = [];
-		this.props.rowTest.forEach(function(element) {
-			rowElements.push(<td>{element}</td>)
-		});
 		return (
-			<tr>{rowElements}</tr>
+		        <tbody>{this.state.rows}</tbody>
 		);
 	}
 }
