@@ -18,8 +18,15 @@ class MainLaptopTable extends React.Component {
     render() {
         return (
             <BootstrapTable data={this.state.rows} striped={ true } hover={ true } condensed={ true }>
-                <TableHeaderColumn isKey dataField='model'>Model</TableHeaderColumn>
+                <TableHeaderColumn dataField='photoUrl'>Photo</TableHeaderColumn>
                 <TableHeaderColumn dataField='mfr'>Brand</TableHeaderColumn>
+                <TableHeaderColumn isKey dataField='model'>Model</TableHeaderColumn>
+                <TableHeaderColumn dataField='screenSize'>Screen Size</TableHeaderColumn>
+                <TableHeaderColumn dataField='osVersion'>OS</TableHeaderColumn>
+                <TableHeaderColumn dataField='cpuModel'>CPU Model</TableHeaderColumn>
+                <TableHeaderColumn dataField='baseCpuClockGhz'>CPU Speed</TableHeaderColumn>
+                <TableHeaderColumn dataField='batteryLifeHr'>Battery Life (Hour)</TableHeaderColumn>
+                <TableHeaderColumn dataField='price'>Price</TableHeaderColumn>
             </BootstrapTable>
         );
     }
