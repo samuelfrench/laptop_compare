@@ -9,19 +9,6 @@ class App extends React.Component {
         super( props );
         this.state = { tableData: "Loading..." };
     }
-    /* componentDidMount() {
-        axios.get( `/data/laptop/` )
-            .then( res => {
-                this.setState( {
-                    tableData: res.data.map(( laptopItem ) =>
-                        <tr>
-                            <td>{laptopItem.model}</td>
-                            <td>{laptopItem.mfr}</td>
-                        </tr>
-                    )
-                });
-            })
-    }; */
     render() {
         return (
             <div>
