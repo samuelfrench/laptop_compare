@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import axios from 'axios';
+import MainLaptopTable from './MainLaptopTable.jsx';
 //import AwesomeComponent from './AwesomeComponent.jsx';
 
 class App extends React.Component {
@@ -8,7 +9,7 @@ class App extends React.Component {
         super( props );
         this.state = { tableData: "Loading..." };
     }
-    componentDidMount() {
+    /* componentDidMount() {
         axios.get( `/data/laptop/` )
             .then( res => {
                 this.setState( {
@@ -20,17 +21,11 @@ class App extends React.Component {
                     )
                 });
             })
-    };
+    }; */
     render() {
         return (
             <div>
-                <table>
-                    <tr>
-                        <th> Model # </th>
-                        <th> MFR </th>
-                    </tr>
-                    {this.state.tableData}
-                </table>
+                <MainLaptopTable />
             </div>
         );
     }
