@@ -305,3 +305,13 @@ INSERT INTO `laptop`.`header` (`header_type_id`, `header_text`, `header_code`, `
 INSERT INTO `laptop`.`header` (`header_type_id`, `header_text`, `header_code`, `default`, `seq`) VALUES ('3', 'Battery Life (Hour)', 'BATTERY_LIFE_HR', 1, '8');
 INSERT INTO `laptop`.`header` (`header_type_id`, `header_text`, `header_code`, `default`, `seq`) VALUES ('2', 'Price', 'BUY_PRICE', 1, '9');
 
+ALTER TABLE `laptop`.`storage_type` 
+ADD COLUMN `storage_type_code` VARCHAR(45) NULL AFTER `storage_type`;
+
+UPDATE `laptop`.`storage_type` SET `storage_type_code`='SSD' WHERE `storage_type_id`='1';
+UPDATE `laptop`.`storage_type` SET `storage_type_code`='HDD' WHERE `storage_type_id`='2';
+
+ALTER TABLE `laptop`.`storage_type` 
+CHANGE COLUMN `storage_type_code` `storage_type_code` VARCHAR(45) NOT NULL ,
+ADD UNIQUE INDEX `storage_type_code_UNIQUE` (`storage_type_code` ASC);
+

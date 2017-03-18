@@ -1,5 +1,0 @@
-go into js directory and run "npm run build"
-run a maven build
-run project from maven
-
-also have maven ignore the node_modules
