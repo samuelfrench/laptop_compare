@@ -316,3 +316,4 @@ ALTER TABLE `laptop`.`storage_type`
 CHANGE COLUMN `storage_type_code` `storage_type_code` VARCHAR(45) NOT NULL ,
 ADD UNIQUE INDEX `storage_type_code_UNIQUE` (`storage_type_code` ASC);
 
+INSERT INTO `laptop`.`storage_type` (`storage_type_id`, `storage_type`, `storage_type_code`) VALUES ('3', 'Unknown', 'NA');
